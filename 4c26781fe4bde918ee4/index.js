@@ -3,8 +3,8 @@
 // Handles adding new course rows with day marks (&#9989; / &#10060;)
 
 document.addEventListener("DOMContentLoaded", () => {
-  const CHECK = "&#9989;";
-  const CROSS = "&#10060;";
+  const CHECK = '&#9989;';
+  const CROSS = '&#10060;';
   const dayOrder = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
   const form = document.getElementById("addCourseForm");
