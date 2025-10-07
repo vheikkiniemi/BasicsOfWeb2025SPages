@@ -1,11 +1,11 @@
 // index.js
 // Author: Ville Heikkiniemi
 // Date: 2025-10-06
-// Handles adding new course rows with day marks (&#9989; / &#10060;)
+// Handles adding new course rows with day marks (✅/❌)
 
 document.addEventListener("DOMContentLoaded", () => {
-  const CHECK = '&#9989;';
-  const CROSS = '&#10060;';
+  const CHECK = '✅';
+  const CROSS = '❌';
   const dayOrder = ["Mon", "Thu", "Fri"];
 
   const form = document.getElementById("addCourseForm");
