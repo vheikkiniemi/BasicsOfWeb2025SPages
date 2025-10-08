@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Weekly Timetable</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
+  <link rel="stylesheet" href="4c26781fe4bde918ee4/style.css">
+  <script src="4c26781fe4bde918ee4/index.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
   </header>
 
   <main class="content">
-    <!-- Top row split into two blocks -->
+    <!-- Top row split into two 50% blocks -->
     <div class="top-grid">
       <!-- Student info (30%) -->
       <section class="student-info" aria-label="Student information">
@@ -40,8 +40,11 @@
 
           <fieldset class="days-group">
             <legend>Days (yes = &#9989;, no = &#10060;)</legend>
+            <label><input type="checkbox" name="day" value="Mon"> Mon</label>
             <label><input type="checkbox" name="day" value="Tue"> Tue</label>
+            <label><input type="checkbox" name="day" value="Wed"> Wed</label>
             <label><input type="checkbox" name="day" value="Thu"> Thu</label>
+            <label><input type="checkbox" name="day" value="Fri"> Fri</label>
           </fieldset>
 
           <div class="form-row">
@@ -58,7 +61,10 @@
         <thead>
           <tr>
             <th>Course</th>
+            <th>Mon</th>
             <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
             <th>Fri</th>
           </tr>
         </thead>
