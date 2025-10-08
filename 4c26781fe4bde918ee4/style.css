@@ -4,22 +4,22 @@ Date: 2025-10-06
 */
 
 /* COLOR GUIDELINES
-   - Page background: very light gray (#f6f8fb)
-   - Main text: dark gray (#1f2937)
-   - Header background: deep blue (#273e73), text white
-   - Table header row: same deep blue, text white
-   - Table rows: alternate white (#fff) / light blue (#eef3ff)
-   - Borders: light gray (#d0d7e2)
+   - Page background: warm near-white (#fcfdfc)
+   - Main text: dark graphite gray (#2a2a2a)
+   - Header background: deep violet (#6c4f8d), text white
+   - Table header row: same deep violet, text white
+   - Table rows: alternate white (#ffffff) / soft lavender (#f9f5ff)
+   - Borders: neutral light gray (#e0e0e0)
 */
 
 :root {
   --base-size: 1rem;
   --h1-size: 1.6rem;
-  --page-bg: #f6f8fb;
-  --text: #1f2937;
-  --brand: #273e73;
-  --table-alt: #eef3ff;
-  --border: #d0d7e2;
+  --page-bg: #fcfdfc;
+  --text: #2a2a2a;
+  --brand: #6c4f8d;
+  --table-alt: #f9f5ff;
+  --border: #e0e0e0;
   --radius: 8px;
 }
 
