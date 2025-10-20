@@ -1,0 +1,131 @@
+/*
+Author: Ville Heikkiniemi
+Date: 2025-09-27
+*/
+
+/* COLOR GUIDELINES
+   - Page background: very light gray (#f6f8fb)
+   - Main text: dark gray (#1f2937)
+   - Header background: deep blue (#273e73), text white
+   - Table header row: same deep blue, text white
+   - Table rows: alternate white (#fff) / light blue (#eef3ff)
+   - Borders: light gray (#d0d7e2)
+*/
+
+:root {
+  /* Typographic scale via rem for easy scaling */
+  --base-size: 1rem;
+  --h1-size: 1.6rem;
+
+  /* Colors */
+  --page-bg: #f6f8fb;
+  --text: #1f2937;
+  --brand: #273e73;
+  --table-alt: #eef3ff;
+  --border: #d0d7e2;
+
+  /* Radius in px */
+  --radius: 8px;
+}
+
+/* Base page styles (rem font sizing, color, background) */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: var(--base-size);          /* rem */
+}
+
+/* Top spacing uses rem (explicit requirement) */
+.site-header {
+  padding-top: 2rem;                     /* rem */
+  padding-bottom: 1rem;                  /* rem */
+  background: var(--brand);
+  color: #fff;
+}
+.site-header h1 {
+  font-size: var(--h1-size);             /* rem */
+  margin: 0;
+  text-align: center;                    /* centered title */
+}
+
+/* Left & right empty space 15% (content width ~70%) */
+.content {
+  margin-left: 15%;                      /* % */
+  margin-right: 15%;                     /* % */
+  padding-top: 1rem;                     /* rem */
+  padding-bottom: 2rem;                  /* rem */
+}
+
+/* Student info block */
+.student-info {
+  background: #fff;
+  border: 1px solid var(--border);       /* px */
+  border-radius: var(--radius);          /* px */
+  padding: 0.75rem 1rem;                 /* rem */
+  margin: 0 0 1rem 0;                    /* rem */
+}
+.student-info p {
+  margin: 0;
+}
+.student-info p + p {
+  margin-top: 0.5rem;                    /* rem */
+}
+
+/* Table container */
+.table-wrap {
+  background: #fff;
+  border: 1px solid var(--border);       /* px */
+  border-radius: var(--radius);          /* px */
+  padding: 1rem;                         /* rem */
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* Table */
+.table {
+  width: 100%;                           /* % */
+  border-collapse: collapse;
+  font-size: 1rem;                       /* rem */
+}
+
+/* Header cells */
+.table thead th {
+  background: var(--brand);
+  color: #fff;
+  text-align: left;
+  padding: 0.75rem;                      /* rem */
+  border-bottom: 1px solid var(--border);/* px */
+}
+
+/* Body cells */
+.table tbody td {
+  padding: 0.6rem 0.75rem;               /* rem */
+  border-bottom: 1px solid var(--border);/* px */
+}
+
+/* Alternate row color */
+.table tbody tr:nth-child(even) {
+  background: var(--table-alt);
+}
+
+/* Column widths:
+   - First column (Course) wider
+   - Other columns share remaining space
+*/
+.table thead th:nth-child(1),
+.table tbody td:nth-child(1) {
+  width: 40%;
+}
+.table thead th:nth-child(n+2),
+.table tbody td:nth-child(n+2) {
+  width: 15%;
+}
+
+/* Center the day columns (Mon–Thu) */
+.table thead th:nth-child(n+2),
+.table tbody td:nth-child(n+2) {
+  text-align: center;
+}
