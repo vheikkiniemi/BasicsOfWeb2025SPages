@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Timetable</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <!--
+    Author: Ville Heikkiniemi
+    Date: 2025-10-06
+  -->
+
+  <header class="site-header">
+    <h1>Registeration page</h1>
+  </header>
+
+  <main class="content">
+    <!-- Top row split into two blocks -->
+    <div class="top-grid">
+      <!-- Student info (30%) -->
+      <section class="student-info" aria-label="Student information">
+        <h2 class="student-info-title">Information</h2>
+        <p><span class="student-name">Your Name</span></p>
+        <p><span class="student-group">Group number</span></p>
+      </section>
+
+      <!-- Controls (70%): add course + day marks -->
+      <section class="controls" aria-label="Add course row">
+        <h2 class="controls-title">Add Course</h2>
+
+        <form id="addCourseForm">
+          <div class="form-row">
+            <label for="courseName">Course name</label>
+            <input id="courseName" name="courseName" type="text" required placeholder="e.g., Web Development Basics">
+          </div>
+
+          <fieldset class="days-group">
+            <legend>Days (yes = &#9989;, no = &#10060;)</legend>
+            <label><input type="checkbox" name="day" value="Tue"> Tue</label>
+            <label><input type="checkbox" name="day" value="Thu"> Thu</label>
+          </fieldset>
+
+          <div class="form-row">
+            <button id="addRowBtn" type="submit" class="btn">Add row</button>
+            <button id="clearBtn" type="reset" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table class="table" id="timetable">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Tue</th>
+            <th>Fri</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+
+</html>
