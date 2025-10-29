@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tailwind Dark Mode — Fixed Toggle</title>
 
   <!-- 1) Early boot: decide theme BEFORE Tailwind loads -->
@@ -18,7 +18,7 @@
     })();
   </script>
 
-  <!-- 2) Tell Tailwind to use class-based dark mode, then load CDN -->
+  <!-- 2) Load CDN, then tell Tailwind to use class-based dark mode -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
 </head>
