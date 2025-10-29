@@ -190,6 +190,7 @@
             function validateEmail() {
                 const input = document.getElementById('email');
                 const value = input.value.trim();
+                setError(input, '');
 
                 if (!value) return setError(input, 'Please enter your email address.');
                 // type="email" already checks format; this gives a friendlier message
