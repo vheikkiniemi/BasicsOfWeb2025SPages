@@ -38,6 +38,61 @@
       <strong>header</strong>, <strong>nav</strong>, <strong>main</strong>, <strong>article</strong>, <strong>section</strong>, <strong>aside</strong>, and <strong>footer</strong>.
     </p>
   </section>
+  <div class="grid gap-8 md:grid-cols-[2fr_1fr]">
+    <article aria-labelledby="article-title" class="bg-white border rounded-lg shadow-sm p-6">
+        <header class="mb-4">
+        <h2 id="article-title" class="text-2xl font-bold">Why Semantics Matter</h2>
+        <p class="text-sm text-gray-600">Published <time datetime="2025-10-28">28 Oct 2025</time></p>
+        </header>
+
+        <p class="mb-4">
+        Semantic elements provide meaning to both browsers and assistive technologies.
+        They improve accessibility, SEO, and code maintainability.
+        </p>
+
+        <figure class="my-6">
+        <img
+            src="https://placehold.co/800x360"
+            alt="Illustration of page regions: header, nav, main, aside, footer"
+            class="w-full rounded"
+            width="800" height="360" />
+        <figcaption class="mt-2 text-sm text-gray-600">
+            Figure: Landmark regions help users navigate quickly.
+        </figcaption>
+        </figure>
+
+        <section id="topics" aria-labelledby="topics-title" class="mt-6">
+        <h3 id="topics-title" class="text-xl font-semibold">Core Topics</h3>
+        <ul class="list-disc pl-6 mt-3">
+            <li>Landmark elements and document outline</li>
+            <li>Accessible navigation and skip links</li>
+            <li>Responsive design with utility classes</li>
+        </ul>
+        </section>
+
+        <footer class="mt-6 pt-4 border-t">
+        <p class="text-sm text-gray-600">Written by Course Staff</p>
+        </footer>
+    </article>
+
+    <aside aria-labelledby="aside-title" class="bg-white border rounded-lg shadow-sm p-6">
+        <h2 id="aside-title" class="text-xl font-semibold">Quick Facts</h2>
+        <dl class="mt-4 space-y-2">
+        <div class="flex gap-2">
+            <dt class="min-w-28 text-gray-600">Approach</dt>
+            <dd>Utility-first (Tailwind)</dd>
+        </div>
+        <div class="flex gap-2">
+            <dt class="min-w-28 text-gray-600">Responsive</dt>
+            <dd>Mobile-first breakpoints</dd>
+        </div>
+        <div class="flex gap-2">
+            <dt class="min-w-28 text-gray-600">A11y</dt>
+            <dd>Landmarks, labels, focus states</dd>
+        </div>
+        </dl>
+    </aside>
+    </div>
 </main>
 </body>
 </html>
