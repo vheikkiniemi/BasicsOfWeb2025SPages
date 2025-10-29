@@ -13,16 +13,16 @@
     if (saved === 'dark') document.documentElement.classList.add('dark');
     if (saved === 'light') document.documentElement.classList.remove('dark');
   </script>
-  <script>
+
+  <script src="https://cdn.tailwindcss.com">
     tailwind.config = { darkMode: 'class' };
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
   <!-- Skip link for keyboard users -->
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded px-3 py-2">
-    Siirry sisältöön
+    Move to contect
   </a>
 
   <!-- Header with brand, nav, and dark-mode toggle -->
@@ -33,7 +33,7 @@
         <a href="/" class="text-xl font-bold">Basics of Web Development</a>
       </div>
 
-      <nav aria-label="Päävalikko" class="hidden sm:block">
+      <nav aria-label="Main menu" class="hidden sm:block">
         <ul class="flex gap-6">
           <li><a href="#" class="hover:underline" aria-current="page">Home</a></li>
           <li><a href="#topics" class="hover:underline">Topics</a></li>
