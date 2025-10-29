@@ -115,6 +115,21 @@
             </aside>
         </div>
     </main>
+    <footer class="mt-12 border-t bg-white">
+        <div class="mx-auto max-w-5xl px-4 py-6">
+            <address class="not-italic text-sm text-gray-600">
+                Basics of Web Development · Centria UAS · Kokkola, Finland
+            </address>
+            <p class="text-sm text-gray-600 mt-2">
+                © <span id="year"></span> Course Materials. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Non-critical enhancement
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
