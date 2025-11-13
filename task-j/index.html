@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Classic Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: "#e10e49", // Primary color 1
+                            light: "#ffffff", // Primary color 2
+                            dark: "#1e1e1e", // Primary color 3
+
+                            blue: "#263f6a",
+                            green: "#284e36",
+                            orange: "#e37222",
+                            rose: "#c24d52",
+                        }
+                    },
+                    boxShadow: {
+                        soft: "0 18px 45px rgba(0, 0, 0, 0.45)",
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-brand-light flex flex-col">
+    <!-- HEADER -->
+    <header class="border-b border-slate-800/70 bg-brand-dark/95 backdrop-blur">
+
+        <nav class="flex justify-center gap-8 p-6 text-brand-light text-lg">
+            <a href="#" class="hover:underline">News</a>
+            <a href="#" class="hover:underline">Features</a>
+            <a href="#" class="hover:underline">Subscribe</a>
+        </nav>
+    </header>
+    </header>
+
+    <!-- MAIN AREA -->
+    <main class="flex-1 flex">
+        <!-- ARTICLE -->
+        <section class="flex-[3] bg-brand-dark/10 p-4 m-4 rounded-xl">
+            <img src="/task-j/bg.jpg" alt="Lakeside cabin at sunset" class="w-full h-auto rounded-xl shadow" />
+        </section>
+        <!-- ASIDE -->
+        <aside class="flex-1 bg-brand-dark/10 p-4 m-4 rounded-xl">
+            THIS IS ASIDE
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/70 bg-brand-dark/95">
+        <div
+            class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-4 text-[0.75rem] text-brand-light/60 md:flex-row md:px-6">
+            <p>© 2025 Your Company – Updated brand theme.</p>
+        </div>
+    </footer>
+    </div>
+</body>
+
+</html>
