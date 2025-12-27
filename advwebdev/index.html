@@ -38,17 +38,17 @@
     <header class="sticky top-0 z-40 bg-brand-dark text-white shadow-soft">
         <div class="mx-auto max-w-7xl px-6">
             <div class="flex h-16 items-center justify-between">
-<a href="/" class="flex items-center gap-3">
-  <img src="logo.svg" alt="Booking System" class="h-10 w-10" />
-  <div class="leading-tight">
-    <span class="block text-sm font-semibold">
-      Booking System
-    </span>
-    <span class="block text-xs text-white/70">
-      Secure resource booking
-    </span>
-  </div>
-</a>
+                <a href="/" class="flex items-center gap-3">
+                    <img src="logo.svg" alt="Booking System" class="h-10 w-10" />
+                    <div class="leading-tight">
+                        <span class="block text-sm font-semibold">
+                            Booking System
+                        </span>
+                        <span class="block text-xs text-white/70">
+                            Secure resource booking
+                        </span>
+                    </div>
+                </a>
 
 
                 <nav class="flex items-center gap-3 hidden">
@@ -89,9 +89,9 @@
                         class="w-full rounded-2xl bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-soft hover:bg-brand-dark/90 text-center">
                         Get started
                     </a>
-                    <a href="/resources"
+                    <a href="/bookings"
                         class="w-full rounded-2xl border border-brand-blue px-6 py-3 text-sm font-semibold hover:bg-brand-dark/90 hover:text-white text-center">
-                        View resources
+                        View bookings
                     </a>
                 </div>
 
@@ -205,30 +205,29 @@
                 </div>
 
                 <!-- Footer navigation -->
-                <nav class="flex flex-wrap gap-4 text-sm text-white/70">
-                    <a href="/privacypolicy" class="hover:text-white transition">
-                        Privacy
-                    </a>
-                    <a href="/terms" class="hover:text-white transition">
-                        Terms
-                    </a>
-                    <a href="/cookiepolicy" class="hover:text-white transition">
-                        Cookies
-                    </a>
+                <nav class="flex items-center gap-3 text-sm text-white/70">
+                    <a href="/privacypolicy" class="rounded-full px-3 py-1 hover:bg-white/10 hover:text-white transition">Privacy</a>
+                    <span class="text-white/30">|</span>
+                    <a href="/terms" class="rounded-full px-3 py-1 hover:bg-white/10 hover:text-white transition">Terms</a>
+                    <span class="text-white/30">|</span>
+                    <a href="/cookiepolicy" class="rounded-full px-3 py-1 hover:bg-white/10 hover:text-white transition">Cookies</a>
                 </nav>
+
+
 
             </div>
 
             <!-- Divider -->
             <div class="mt-8 border-t border-white/10 pt-4 text-xs text-white/50">
-                © <span id="year"></span> Ville Heikkiniemi. All rights reserved. Source code licensed under the MIT License.
+                © <span id="year"></span> Ville Heikkiniemi. All rights reserved. Source code licensed under the MIT
+                License.
             </div>
 
         </div>
     </footer>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
 
