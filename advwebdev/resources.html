@@ -105,7 +105,9 @@
                             remove.
                         </p>
 
-                        <form class="mt-8 space-y-6" action="#" method="post">
+                        <form class="mt-8 space-y-6" action="https://httpbin.org/post" method="post" target="_blank"
+                            enctype="application/x-www-form-urlencoded">
+
                             <!-- Resource name -->
                             <div>
                                 <label for="resourceName" class="block text-sm font-semibold">
@@ -158,24 +160,41 @@
                                     <label for="resourcePrice" class="block text-sm font-semibold">
                                         Price
                                     </label>
-                                    <div class="mt-2 flex items-stretch gap-2">
+
+                                    <div class="mt-2 grid grid-cols-[auto_1fr_auto] gap-2 items-stretch">
+                                        <!-- Currency -->
                                         <span
                                             class="inline-flex items-center rounded-2xl border border-black/10 bg-black/5 px-4 text-sm font-semibold text-black/70">
                                             €
                                         </span>
+
+                                        <!-- Price value -->
                                         <input id="resourcePrice" name="resourcePrice" type="number" min="0" step="0.01"
-                                            placeholder="0.00"
-                                            class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
-                             focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 transition-all duration-200 ease-out" />
+                                            placeholder="0.00" class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
+             focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30
+             transition-all duration-200 ease-out" />
+
+                                        <!-- Price unit -->
+                                        <select id="resourcePriceUnit" name="resourcePriceUnit" class="rounded-2xl border border-black/10 bg-white px-3 py-3 text-sm font-semibold
+             outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30
+             transition-all duration-200 ease-out">
+                                            <option value="hour">/ hour</option>
+                                            <option value="day">/ day</option>
+                                            <option value="week">/ week</option>
+                                            <option value="month">/ month</option>
+                                        </select>
                                     </div>
+
                                     <p class="mt-2 text-xs text-black/50">
-                                        Use 0 for free resources. Currency handling can be expanded later.
+                                        Set the price per selected time unit. Use 0 for free resources.
                                     </p>
                                 </div>
+
                             </div>
 
                             <!-- Actions -->
-                            <div id="resourceActions" class="mt-8 grid gap-4 w-full grid-cols-1 sm:grid-flow-col sm:auto-cols-fr"></div>
+                            <div id="resourceActions"
+                                class="mt-8 grid gap-4 w-full grid-cols-1 sm:grid-flow-col sm:auto-cols-fr"></div>
                         </form>
                     </div>
                 </div>
