@@ -13,17 +13,24 @@ let createButton = null;
 // ===============================
 // 2) Button creation helpers
 // ===============================
-function addButton({ label, type = "button", value, classes }) {
+
+const BUTTON_BASE_CLASSES =
+  "w-full rounded-2xl px-6 py-3 text-sm font-semibold transition-all duration-200 ease-out";
+
+const BUTTON_ENABLED_CLASSES =
+  "bg-brand-primary text-white hover:bg-brand-dark/80 shadow-soft";
+
+const BUTTON_DISABLED_CLASSES =
+  "cursor-not-allowed opacity-50";
+
+function addButton({ label, type = "button", value, classes = "" }) {
   const btn = document.createElement("button");
   btn.type = type;
   btn.textContent = label;
   btn.name = "action";
   if (value) btn.value = value;
 
-  btn.className = `
-    w-full rounded-2xl px-6 py-3 text-sm font-semibold transition-all duration-200 ease-out
-    ${classes}
-  `;
+  btn.className = `${BUTTON_BASE_CLASSES} ${classes}`.trim();
 
   actions.appendChild(btn);
   return btn;
@@ -34,9 +41,20 @@ function setButtonEnabled(btn, enabled) {
 
   btn.disabled = !enabled;
 
-  // Add/remove a "disabled look" (Tailwind utility classes)
-  btn.classList.toggle("opacity-50", !enabled);
+  // Keep disabled look in ONE place (here)
   btn.classList.toggle("cursor-not-allowed", !enabled);
+  btn.classList.toggle("opacity-50", !enabled);
+
+  // Optional: remove hover feel when disabled (recommended UX)
+  if (!enabled) {
+    btn.classList.remove("hover:bg-brand-dark/80");
+  } else {
+    // Only re-add if this button is supposed to have it
+    // (for Create we know it is)
+    if (btn.value === "create" || btn.textContent === "Create") {
+      btn.classList.add("hover:bg-brand-dark/80");
+    }
+  }
 }
 
 function renderActionButtons(currentRole) {
@@ -44,7 +62,7 @@ function renderActionButtons(currentRole) {
     createButton = addButton({
       label: "Create",
       type: "submit",
-      classes: "bg-brand-primary text-white hover:bg-brand-dark/80 shadow-soft cursor-not-allowed",
+      classes: BUTTON_ENABLED_CLASSES,
     });
   }
 
@@ -53,21 +71,26 @@ function renderActionButtons(currentRole) {
       label: "Create",
       type: "submit",
       value: "create",
-      classes: "bg-brand-primary text-white hover:bg-brand-dark/80 shadow-soft cursor-not-allowed",
+      classes: BUTTON_ENABLED_CLASSES,
     });
 
-    addButton({
+    updateButton = addButton({
       label: "Update",
       value: "update",
-      classes: "border border-brand-blue text-brand-blue hover:bg-brand-dark hover:text-white cursor-not-allowed",
+      classes: BUTTON_ENABLED_CLASSES,
     });
 
-    addButton({
+    deleteButton = addButton({
       label: "Delete",
       value: "delete",
-      classes: "border border-brand-rose text-brand-rose hover:bg-brand-rose hover:text-white cursor-not-allowed",
+      classes: BUTTON_ENABLED_CLASSES,
     });
   }
+
+  // Default: Buttons are disabled until validation says it's OK
+  setButtonEnabled(createButton, false);
+  setButtonEnabled(updateButton, false);
+  setButtonEnabled(deleteButton, false);
 }
 
 // ===============================
