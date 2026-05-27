@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repository validator - Feedback snippets</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="static/feedback.js" defer></script>
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="card">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Repository validator</p>
+          <h1>Feedback snippets</h1>
+          <p class="muted">Give one task ID, choose feedback rows, and copy them to the clipboard.</p>
+        </div>
+      </header>
+
+      <form class="repo-form" id="task-form">
+        <fieldset>
+          <legend>Select task</legend>
+          <div class="form-row">
+            <input
+              id="taskid"
+              name="taskid"
+              type="text"
+              placeholder="IT00AK35-3005-C1"
+              autocomplete="off"
+              aria-label="Task ID">
+            <button type="submit">Show feedback</button>
+          </div>
+          <p class="muted small">Use the full task ID, for example <code>IT00AK35-3005-C1</code>. The page splits it into course <code>IT00AK35-3005</code> and task <code>C1</code>.</p>
+        </fieldset>
+      </form>
+
+      <div class="meta-grid" id="selected-task-meta">
+        <div class="meta-box">
+          <span class="meta-label">Course</span>
+          <span class="meta-value" id="selected-course">-</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-label">Task</span>
+          <span class="meta-value" id="selected-task">-</span>
+        </div>
+      </div>
+
+      <section class="result-box" id="feedback-box">
+        <div class="result-box-header">
+          <div>
+            <h2>Available feedback</h2>
+            <p class="muted">Only rows matching the selected task ID are shown.</p>
+          </div>
+          <div class="button-group">
+            <button type="button" class="secondary-button" id="clear-selection-button">Clear selection</button>
+            <button type="button" class="secondary-button" id="copy-feedback-button">Copy selected</button>
+          </div>
+        </div>
+
+        <div class="feedback-list" id="feedback-list">
+          <p class="muted">Enter a task ID to load feedback rows.</p>
+        </div>
+
+        <p id="feedback-copy-status" class="copy-feedback" aria-live="polite"></p>
+      </section>
+    </section>
+
+    <footer class="page-footer">
+      Example direct link: <code>?taskid=IT00AK35-3005-C1</code>
+    </footer>
+  </main>
+</body>
+
+</html>
