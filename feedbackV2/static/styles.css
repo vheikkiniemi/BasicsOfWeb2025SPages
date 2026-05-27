@@ -325,3 +325,7 @@ body {
   gap: 8px;
   flex-wrap: wrap;
 }
+
+#task-form {
+  display: none;
+}
