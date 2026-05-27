@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Repository validator - Feedback snippets</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <script src="static/feedback.js" defer></script>
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="card">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Repository validator</p>
+          <h1>Feedback snippets</h1>
+          <p class="muted">Select the feedback rows you want and copy them to the clipboard.</p>
+        </div>
+      </header>
+
+      <div class="meta-grid">
+        <div class="meta-box">
+          <span class="meta-label">Course</span>
+          <span class="meta-value" id="course-name">Basics of Web Development</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-label">Task</span>
+          <span class="meta-value" id="task-name">Feedback task</span>
+        </div>
+      </div>
+
+      <section class="result-box" id="feedback-box">
+        <div class="result-box-header">
+          <div>
+            <h2>Available feedback</h2>
+            <p class="muted">Rows are loaded from <code>static/items.csv</code> based on the current task identifier.</p>
+          </div>
+          <div class="button-group">
+            <button type="button" class="secondary-button" id="clear-selection-button">Clear selection</button>
+            <button type="button" class="secondary-button" id="copy-feedback-button">Copy selected</button>
+          </div>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label for="taskid">Task id</label>
+          <div class="task-input-row">
+            <input type="text" id="taskid" name="taskid" value="task-a" autocomplete="off">
+            <button type="submit" class="secondary-button">Load rows</button>
+          </div>
+          <p class="muted small">Tip: use URL parameters, for example <code>?taskid=task-a&amp;course=Web%20Development&amp;task=Task%20A</code>.</p>
+        </form>
+
+        <div class="feedback-list" id="feedback-list">
+          <p class="muted">Loading feedback rows...</p>
+        </div>
+
+        <p id="feedback-copy-status" class="copy-feedback" aria-live="polite"></p>
+      </section>
+    </section>
+
+    <footer class="page-footer">
+      Only rows matching the current task identifier are shown on this page.
+    </footer>
+  </main>
+</body>
+
+</html>
